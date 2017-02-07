@@ -1,0 +1,16 @@
+<h1><%= @event.title %>
+<%= @event.category %>
+<%= @event.creator %>
+<%= simple_format(@event.description) %></h1>
+	<% @event.messages.each do |m| %>
+		<li>
+		<%= m.creator %>
+		<%= ": " %>
+		<%= m.title %>
+		<%= m.content %>
+		<%= m.created_at %>
+		<%= link_to 'Delete', event_message_path(m), :method=> :delete %>
+		</li>
+	<% end %>
+
+<p><%= link_to 'Back to index', :controller => 'events', :action => 'index' %></p>

@@ -1,0 +1,7 @@
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+    
+    <%= f.select :category, [['快報資訊','快報資訊'],['求物資','求物資'],['求救','求救']], :prompt=>"<未選>"%>
+
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %>

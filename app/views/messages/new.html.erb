@@ -1,0 +1,9 @@
+<%= form_for @message, :url => { :controller => 'messages', :action => 'create' } do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :content, "Content" %>
+    <%= f.text_area :content %>
+
+    <%= f.submit "Create" %>
+<% end %>

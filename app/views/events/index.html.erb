@@ -1,0 +1,16 @@
+<ul>
+<% @events.each do |event| %>
+  <li>
+ 	  <%= event.title %>
+ 	  <%= event.created_at %>
+ 	  <%= event.category %>
+	  <%= simple_format(event.description) %>
+  <%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
+  <%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
+  <%= link_to 'Delete', event_path(event) ,:method => :delete %>
+  <%= link_to 'Message', event_messages_path(event), :id => event %>
+  </li>
+<% end %>
+</ul>
+<%= paginate @events %>
+<%= link_to 'New Event', :controller => 'events', :action => 'new' %>
